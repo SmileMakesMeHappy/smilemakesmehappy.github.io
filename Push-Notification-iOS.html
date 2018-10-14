@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Push Notification (iOS)</title>
+</head>
+<body>
+<h1>Push Notification (iOS)</h1>
+<img src="img/keychain.png"><br />
+フォーマットをp12にする。p12が選択できない場合は、キーチェーンアクセスから該当のものを削除して、ダウンロードしたファイルをフォルダからダブルクリックすると表示される時がある。
+<br />
+p12のパスワードの求められるが「なし」でも問題はない。<br />
+書き込みのためのパスワードを入力してp12ファイルが生成される。<br />
+
+<h2>サーバー側のpemファイル生成</h2>
+apns_push_dev.p12を生成してある場合、次のようなコマンドをターミナルから実行する。<br />
+<br />
+openssl pkcs12 -in apns_push_dev.p12 -out apns_push_dev.pem -nodes -clcerts
+<br />
+<br />
+生成されたapns_push_dev.pemをサーバー側に設置して終わりです。<br />
+
+<a href="index.html">TOP</a> 
+
+</body>
+</html>
